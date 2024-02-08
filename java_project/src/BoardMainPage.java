@@ -1,25 +1,25 @@
+import java.net.Socket;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-public class BoardMainPage extends Thread{
-	private List<BoardData> listMain = new ArrayList<BoardData>();
-	public BoardMainPage() {
-		
+public class BoardMainPage{
+	private ArrayList<BoardData> listMain;
+	private Socket socket;
+	
+	public BoardMainPage(Socket socket) {
+		this.socket = socket;
+		// 객체 가져와서 대입하는 과정 수록하기
+		// this.listMain = ;
 	}
 	
-	private void returnMainPage() {
-		System.out.println("잘못 입력하셨습니다. 메인 페이지로 다시 연결합니다.");
-		System.out.println("----------------------restart------------------------");
-	}
-
-	
-	@Override
-	public void run() {
+	public void mainPage() {
 		Scanner sc = new Scanner(System.in); // 입력받기
 
 		System.out.println("-------------------------------------------------------");
-		System.out.println("  |  전체 목록   | 게시글 제목    |  게시글 내용   | 게시글 작성자  |");
+		System.out.println("  |  전체 번호   | 게시글 제목    |  게시글 내용   | 게시글 작성자  |");
+		for(BoardData post : listMain) {
+			System.out.println();
+		}
 		// 10 | 13 | 13 | 10
 		// 전체 목록, 게시글 작성자를 제외하고 각각 5를 뺀 숫자를 초과하면 나머지 부분은 ...으로 표시
 		// 전체 목록은 수치로 표시		
@@ -38,9 +38,11 @@ public class BoardMainPage extends Thread{
 		String enterString = sc.next();
 		if (enterString == "1") {
 			System.out.println("-----------------------ㅡMY PAGE-----------------------");
-			this.run();
+			BoardMyPage myPage = new BoardMyPage(listMain);
+			myPage.myPage();
 		} else if (enterString == "2") {
-
+			BoardClientWritePage writePage = new BoardClientWritePage();
+			writePage.newWriteScreen(socket);
 		} else {
 
 		}

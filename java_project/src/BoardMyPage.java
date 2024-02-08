@@ -1,15 +1,20 @@
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BoardMyPage extends Thread{
+public class BoardMyPage{
+	private ArrayList<BoardData> listMain;
 	
-	@Override
-	public void run() {
+	public BoardMyPage(ArrayList<BoardData> listMain) {
+		this.listMain = listMain;
+	}
+	
+	public void myPage() {
 		Scanner sc = new Scanner(System.in); // 입력받기
 		
 		System.out.println("-------------------------------------------------------");	
-		System.out.println("  |  전체 목록   | 내 게시글 제목    |  게시글 내용   | 게시글 작성자  |");
-								//	10    | 	13    |   13	 |   10
+		System.out.println("  |  내 게시글 번호   | 내 게시글 제목    |  게시글 내용   | 게시글 작성자  |");
+		
+								//	13    | 	13    |   13	 |   10
 								// 전체 목록, 게시글 작성자를 제외하고 각각 5를 뺀 숫자를 초과하면 나머지 부분은 ...으로 표시
 								// 전체 목록은 수치로 표시
 		System.out.println("-------------------------------------------------------");
@@ -32,12 +37,19 @@ public class BoardMyPage extends Thread{
 		switch(enterString) {
 		case "1" :
 			
+			sc.close();
 			break;
 		case "2" : 
+			
+			sc.close();
 			break;
 		case "3" : 
+			
+			sc.close();
 			break;
 		case "4" : 
+			
+			sc.close();
 			break;
 		}
 	}

@@ -10,10 +10,8 @@ public class BoardClient {
 			// 컴퓨터 내 7777 프로그램에 접근			
 			System.out.println("서버에 연결되었습니다.");
 			
-			BoardMyPage mainpage = new BoardMyPage();
-			if(mainpage != null) {
-				
-			}
+			
+			
 			BoardSender sender = new BoardSender(socket);
 			BoardReceiver receiver = new BoardReceiver(socket);
 			

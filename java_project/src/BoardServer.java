@@ -16,9 +16,6 @@ public class BoardServer {
 			
 			socket = serverSocket.accept();
 			// 유저 소켓에서 데이터를 보낼 때까지 기다린다. 
-			
-			
-			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
