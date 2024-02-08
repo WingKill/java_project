@@ -2,6 +2,7 @@
 import java.time.LocalDate;
 import java.util.Scanner;
 
+// 클라이언트 측에서 진행하게 될, 게시글 작성, 수정, 삭제 담당.
 // 작성, 수정, 삭제 담당. 근데 데이터 보관은 아닌거 같은데... 분리해야겠다 나중에
 public class BoardData extends Thread{
 	private String boardSubject;
