@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 
-//  서버가 가지고 있을 작성 게시글 데이터.
-public class BoardServerData {
+import s.sun.data.BoardData;
+
+//  서버에서 진행하는 작업. 이걸 쓰레드로 쓰면 되겠다.
+public class BoardServerInputOutput implements Runnable{
 	private ArrayList<BoardData> posts;
 	private String name = "전체 목록";
 	
 	// BoardData를 담는 게시판 생성
-	public BoardServerData() {
+	public BoardServerInputOutput() {
 		this.posts = new ArrayList<BoardData>();
 	}
 	
@@ -24,9 +26,16 @@ public class BoardServerData {
 	public ArrayList<BoardData> getMyPosts(){
 		// 내 게시물 목록을 보여주기 위한 리스트
 		ArrayList<BoardData> myPosts = new ArrayList<BoardData>();
+		
 		for(BoardData post : posts) {
 			myPosts.add(post);
 		}
 		return myPosts;
+	}
+	
+	@Override
+	public void run() {
+		
+		
 	}
 }

@@ -2,12 +2,12 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class BoardSender extends Thread {
+public class ExamSender extends Thread {
 	Socket socket;
 	DataOutputStream out;
 	String name;
 	
-	public BoardSender(Socket socket) {
+	public ExamSender(Socket socket) {
 		this.socket = socket;
 		try {
 			out = new DataOutputStream(socket.getOutputStream());

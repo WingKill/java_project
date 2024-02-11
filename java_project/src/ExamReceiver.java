@@ -1,12 +1,12 @@
 import java.io.DataInputStream;
 import java.net.Socket;
 
-public class BoardReceiver extends Thread{
+public class ExamReceiver extends Thread{
 	Socket socket;
 	DataInputStream in;
 	String name;
 	
-	public BoardReceiver(Socket socket) {
+	public ExamReceiver(Socket socket) {
 		this.socket = socket;
 		try {
 			in = new DataInputStream(socket.getInputStream());
